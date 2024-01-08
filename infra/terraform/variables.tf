@@ -31,7 +31,7 @@ variable zone_app {
   default     = "ru-central1-a"
 }
 variable "k8s_version" {
-  default = "1.19"
+  default = "1.27"
 }
 
 variable "v4_cidr" {

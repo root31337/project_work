@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: zipkin-ingress
+spec:
+  rules:
+  - host: zipkin.secureitzone.online
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: zipkin
+          servicePort: 9411
