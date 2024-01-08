@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ui-ingress
+spec:
+  rules:
+  - host: app.secureitzone.online
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: ui
+          servicePort: 8000

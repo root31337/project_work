@@ -1,0 +1,8 @@
+---
+name: ui
+version: 1.0.0
+description: search engine application UI
+maintainers:
+  - name: root31337
+    email: gribmax@gmail.com
+appVersion: 1.0

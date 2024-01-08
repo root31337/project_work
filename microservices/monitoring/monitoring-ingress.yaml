@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: monitoring-ingress
+spec:
+  rules:
+    - host: grafana.secureitzone.online
+      http:
+        paths:
+          - backend:
+              serviceName: grafana
+              servicePort: 3000
+    - host: prometheus.secureitzone.online
+      http:
+        paths:
+          - backend:
+              serviceName: prometheus-server
+              servicePort: 9090

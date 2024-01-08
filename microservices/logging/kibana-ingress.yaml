@@ -1,0 +1,14 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kibana-ingress
+spec:
+  rules:
+  - host: kibana.secureitzone.online
+    http:
+      paths:
+      - path: "/"
+        backend:
+          serviceName: kibana
+          servicePort: 5601
