@@ -1,0 +1,9 @@
+{
+    "folder_id": "b1g0bgapni0osi095ffl",
+    "source_image_family": "ubuntu-1604-lts",
+    "service_account_key_file": "/home/maxwell/Otus/workdir/project_work/infra/packer/key.json",
+    "zone": "ru-central1-a",
+    "subnet": "e9b24d2brea26rc2tc3a",
+    "use_ipv4_nat": "true"
+}
+

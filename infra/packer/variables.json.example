@@ -1,0 +1,8 @@
+{
+    "folder_id": "............",
+    "source_image_family": "ubuntu-1604-lts",
+    "service_account_key_file": "/home/maxwell/Otus/workdir/project_work/infra/packer/key.json",
+    "zone": "ru-central1-x",
+    "subnet": "...............",
+    "use_ipv4_nat": "true"
+}

@@ -1,0 +1,30 @@
+variable "source_image_family" {
+  type = string
+  default = "ubuntu-1604-lts"
+}
+
+variable "service_account_key_file" {
+  type = string
+  default = "./Otus/key.json"
+}
+
+variable "image-id {
+  type = string
+  default = "fd8fp6gf9d7trfyroheub"
+}
+
+variable "folder_id" {
+  type = string
+  default = ".................."
+}
+
+variable "zone" {
+  type = string
+  default = "ru-central1-a"
+}
+
+
+variable "subnet_id" {
+  type = string
+  default = ".................."
+}
