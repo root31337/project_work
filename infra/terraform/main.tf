@@ -18,7 +18,3 @@ resource "yandex_vpc_subnet" "subnet_yc_kuber" {
   zone           = var.zone
   v4_cidr_blocks = [var.v4_cidr]
 }
-
-
-
-
