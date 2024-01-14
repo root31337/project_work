@@ -13,12 +13,11 @@ resource "yandex_vpc_network" "this" {
 
 
 resource "yandex_vpc_subnet" "subnet_yc_kuber" {
-  name           = "project_work"
+  name           = "Project"
   network_id     = yandex_vpc_network.this.id
   zone           = var.zone
   v4_cidr_blocks = [var.v4_cidr]
 }
-
 
 
 

@@ -4,13 +4,13 @@ metadata:
   name: monitoring-ingress
 spec:
   rules:
-    - host: grafana.secureitzone.online
+    - host: grafana.geckzone.ru
       http:
         paths:
           - backend:
               serviceName: grafana
               servicePort: 3000
-    - host: prometheus.secureitzone.online
+    - host: prometheus.geckzone.ru
       http:
         paths:
           - backend:

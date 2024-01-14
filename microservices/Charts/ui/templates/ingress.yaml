@@ -5,7 +5,7 @@ metadata:
   name: {{ .Release.Name }}-{{ .Chart.Name }}
 spec:
   rules:
-  - host: '{{ .Values.URL | default (printf "staging.secureitzone.online" ) }}'
+  - host: '{{ .Values.URL | default (printf "staging.geckzone.ru" ) }}'
     http:
       paths:
       - path: "/"

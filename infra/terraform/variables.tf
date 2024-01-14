@@ -31,7 +31,7 @@ variable zone_app {
   default     = "ru-central1-a"
 }
 variable "k8s_version" {
-  default = "1.27"
+  default = "1.19"
 }
 
 variable "v4_cidr" {
@@ -54,7 +54,7 @@ variable "mongodb_image_id" {
 
 }
 variable "gitlab_domain" {
-  description = "gitlab.secureitzone.online."
+  description = "gitlab.geckzone.ru."
 
 }
 

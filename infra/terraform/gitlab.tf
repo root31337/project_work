@@ -13,9 +13,9 @@ resource "yandex_vpc_address" "gitlabIP" {
 
 
 resource "yandex_dns_zone" "zone1" {
-  name        = "secureitzone-zone"
+  name        = "geckzone-zone"
   description = "desc"
-  zone        = "secureitzone.online."
+  zone        = "geckzone.ru."
   public      = true
 
 }
