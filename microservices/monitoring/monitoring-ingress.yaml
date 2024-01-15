@@ -21,7 +21,7 @@ spec:
   - host: prometheus.geckzone.ru
     http:
       paths:
-      - path: /prometheus
+      - path: /
         pathType: Prefix
         backend:
           service:
