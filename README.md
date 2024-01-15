@@ -185,7 +185,7 @@ project_work/microservices
     kubectl apply -f monitoring -n monitoring
     helm repo add bitnami https://charts.bitnami.com/bitnami
 
-Через пару минут можно проверить работу:
+После этого можно будет зайти на ресурсы:
 
 http://app.geckzone.ru
 http://prometheus.geckzone.ru
