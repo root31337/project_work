@@ -11,7 +11,7 @@ spec:
   - host: kibana.geckzone.ru
     http:
       paths:
-      - path: /kibana
+      - path: /
         pathType: Prefix
         backend:
           service:
