@@ -20,7 +20,7 @@ spec:
         component: ui
     spec:
       containers:
-      - image: root31337/ui:latest
+      - image: gribmax/ui:latest
         name: ui
         env:
           - name: MONGO

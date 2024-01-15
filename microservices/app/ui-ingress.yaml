@@ -1,14 +1,20 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ui-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: ingress-nginx
   rules:
   - host: app.geckzone.ru
     http:
       paths:
-      - path: "/"
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: ui
-          servicePort: 8000
+          service:
+            name: ui
+            port:
+              number: 8000

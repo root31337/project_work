@@ -1,14 +1,20 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: zipkin-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: ingress-nginx
   rules:
   - host: zipkin.geckzone.ru
     http:
       paths:
-      - path: "/"
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: zipkin
-          servicePort: 9411
+          service:
+            name: zipkin
+            port:
+              number: 9411

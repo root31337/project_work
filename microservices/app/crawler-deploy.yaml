@@ -20,7 +20,7 @@ spec:
         component: crawler
     spec:
       containers:
-      - image: root31337/crawler:latest
+      - image: gribmax/crawler:latest
         name: crawler
         env:
           - name: MONGO

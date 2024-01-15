@@ -4,7 +4,7 @@ service:
   externalPort: 8000
 
 image:
-  repository: root31337/crawler
+  repository: gribmax/crawler
   tag:
 
 #databaseHost:

@@ -1,14 +1,20 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: kibana-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: ingress-nginx
   rules:
   - host: kibana.geckzone.ru
     http:
       paths:
-      - path: "/"
+      - path: /kibana
+        pathType: Prefix
         backend:
-          serviceName: kibana
-          servicePort: 5601
+          service:
+            name: kibana
+            port:
+              number: 5601

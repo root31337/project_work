@@ -1,18 +1,30 @@
-apiVersion: networking.k8s.io/v1beta1
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: monitoring-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: ingress-nginx
   rules:
-    - host: grafana.geckzone.ru
-      http:
-        paths:
-          - backend:
-              serviceName: grafana
-              servicePort: 3000
-    - host: prometheus.geckzone.ru
-      http:
-        paths:
-          - backend:
-              serviceName: prometheus-server
-              servicePort: 9090
+  - host: grafana.geckzone.ru
+    http:
+      paths:
+      - path: /grafana
+        pathType: Prefix
+        backend:
+          service:
+            name: grafana
+            port:
+              number: 3000
+  - host: prometheus.geckzone.ru
+    http:
+      paths:
+      - path: /prometheus
+        pathType: Prefix
+        backend:
+          service:
+            name: prometheus-server
+            port:
+              number: 9090            
