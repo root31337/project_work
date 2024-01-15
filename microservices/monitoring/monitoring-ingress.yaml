@@ -11,7 +11,7 @@ spec:
   - host: grafana.geckzone.ru
     http:
       paths:
-      - path: /grafana
+      - path: /
         pathType: Prefix
         backend:
           service:
