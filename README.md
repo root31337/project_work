@@ -94,10 +94,10 @@ project_work
 > 
     yc compute image list
 
-Переименовать файл infra/terraform/ terraform.tfvars.example в variables.json и вставить свои значения
-Перейти и выполнить
+Переименовать файл infra/terraform/ terraform.tfvars.example в terraform.tfvars и вставить свои значения
+Перейти в infra/terraform и выполнить:
 >
-  cd terraform
+
   terraform init
   terraform apply
 
@@ -151,4 +151,59 @@ $kubectl create namespace gitlab
     kubectl create clusterrolebinding gitlab-cluster-admin \
     --clusterrole=cluster-admin \
     --serviceaccount=gitlab:default
+
+
+### Установка микросервисов
+
+Выполнить установку ingress-ngnix
+>
+    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.2/deploy/static/provider/cloud/deploy.yaml
+
+Посмотреть IP LoadBalancer:
+>
+    kubectl get svc -n ingress-nginx
+
+Через веб интерфейс YC создать А DNS записи поддоменов app, staging, prometheus,  grafana, zipkin , kibana  доменф geckzone.ru на внешний IP LoadBalancer.
+
+Установить RabbitMQ
+>
+    export RABBITMQ_PASSWORD=crawler_pass
+>
+    helm install rabbitmq \
+    --set auth.password=$RABBITMQ_PASSWORD \
+    bitnami/rabbitmq \
+    --namespace production
+
+Перейти в папку 
+project_work/microservices
+
+Выполнить:
+>
+    kubectl apply -f app -n production
+    kubectl apply -f tracing -n production
+    kubectl apply -f logging -n logging
+    kubectl apply -f monitoring -n monitoring
+    helm repo add bitnami https://charts.bitnami.com/bitnami
+
+Через пару минут можно проверить работу:
+
+http://app.geckzone.ru
+http://prometheus.geckzone.ru
+http://grafana.geckzone.ru
+http://zipkin.geckzone.ru
+http://kibana.geckzone.ru
+
+В Kibana настроить Data View по индексу  filebeat-*
+В Grafana установить пароль, и сменить у подключённого DataSourse Prometheus HttpMethod на POST
+
+### CI/CD
+В папках src/ui и src/crawler выполнить 
+>
+    git init
+    git remote add origin https://gitlab.geckzone.ru/root/ui
+    git remote add origin https://gitlab.geckzone.ru/root/crawler
+
+Сделать коммит в репозитарии, запустится пайплайн со сборкой, тестом, деплоем на staging (по адресу http://staging.geckzone.ru ) и ручным деплоем на production (http://app.geckzone.ru )
+
+
 
