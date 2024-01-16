@@ -95,6 +95,7 @@ project_work
     yc compute image list
 
 Переименовать файл infra/terraform/ terraform.tfvars.example в terraform.tfvars и вставить свои значения
+В работе использовался k8s версии 1.28 (манифесты на старых версиях могут не работать)
 Перейти в infra/terraform и выполнить:
 >
 
@@ -121,6 +122,8 @@ Ansible создаст:
 
 В каждом из проектов 
 * Создать переменные CI_REGISTRY_USER и CI_REGISTRY_PASSWORD с реквизитами от DockerHub (Settings/CI/CD)
+* Запретить возможность регистрации аккаунтов сторонним пользователям
+* Отключить публичные раннеры
 * Получить токены регистрации gitlab-runner 
 
 Создадим немспейс gitlab в кластере k8s:
