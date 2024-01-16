@@ -95,7 +95,7 @@ project_work
     yc compute image list
 
 Переименовать файл infra/terraform/ terraform.tfvars.example в terraform.tfvars и вставить свои значения
-В работе использовался k8s версии 1.28 (манифесты на старых версиях могут не работать)
+В работе использовался k8s версии 1.27 (манифесты на старых версиях могут не работать)
 Перейти в infra/terraform и выполнить:
 >
 
