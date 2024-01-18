@@ -208,5 +208,11 @@ http://kibana.geckzone.ru
 
 Сделать коммит в репозитарии, запустится пайплайн со сборкой, тестом, деплоем на staging (по адресу http://staging.geckzone.ru ) и ручным деплоем на production (http://app.geckzone.ru )
 
-
+```mermaid
+sequenceDiagram
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob:Another authentication Response
+Bob --> Alice: Another authentication Response
+```
 
