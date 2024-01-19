@@ -41,8 +41,9 @@ project_work
 ### Используемые внешние ресурсы
 
 * Yandex Cloud
-* Домен geckzone.ru с прописанными DNS серверами ns1.yandexcloud.net. и ns2.yandexcloud.net.
-
+* Домен geckzone.ru
+* У регистратора прописаны  DNS сервера ns1.yandexcloud.net. и ns2.yandexcloud.net.
+* 
 ### Предварительная подготовка рабочего места
 
 Необходимо иметь аккаунт на Yandex Cloud https://console.cloud.yandex.ru/
